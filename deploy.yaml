@@ -1,0 +1,10 @@
+---
+- name: deploy yaml file
+  hosts: tomcat
+  become: yes
+  tasks:
+   - name: deploying yaml files
+     copy:
+      src: '{{ item }}'
+      dest: /var/lib/tomcat/webapps
+     with_fileglob: "target/hello-*.war"
