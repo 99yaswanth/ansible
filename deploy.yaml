@@ -1,6 +1,6 @@
 ---
 - name: deploy yaml file
-  hosts: tomcat
+  hosts: apps
   become: yes
   tasks:
    - name: deploying yaml files
